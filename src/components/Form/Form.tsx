@@ -1,6 +1,6 @@
 import { useState } from "react";
-import {TextField, Button} from '@material-ui/core';
-
+import {TextField, Button, FormControl} from '@mui/material';
+import SendIcon from '@mui/icons-material/ScheduleSend';
 
 
 function Form(){
@@ -8,12 +8,11 @@ function Form(){
   const [task, setTask] = useState('');
   const [time, setTime] = useState('00:00:00');
 
-  console.log(task, time);
-
   return(
-    <form >
-    <div >
+    <FormControl>
+    
       <TextField 
+        sx={{width: '100%',mb: 2}}
         id="tarefa" 
         label="Adicione uma tarefa" 
         value={task}
@@ -21,11 +20,10 @@ function Form(){
         placeholder="O que você quer fazer?"
         required
         variant="outlined" />
-      
-    </div>
-    <div >
+  
       
       <TextField
+        sx={{width: '100%',mb: 2}}
         id="tempo"
         label="Quanto tempo vai levar?"
         type="time"
@@ -34,9 +32,11 @@ function Form(){
         required
       />
       
-    </div>
-    <Button variant="contained" type="submit" >Adicionar &nbsp;<i className="material-icons">send</i></Button>
-  </form>
+   
+    <Button variant="contained" endIcon={<SendIcon/>} color="success">
+      Adicionar
+    </Button>
+  </FormControl>
   );
 }
 
