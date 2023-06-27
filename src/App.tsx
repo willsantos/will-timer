@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       <h1>Hello World</h1> 
       <p>Aperta <Button value="Meu Botão" notifyMessage='Cade vc Gabi?!' hasNotify></Button></p>
+      <Form></Form>
     </div>
   );
 }
