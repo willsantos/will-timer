@@ -1,5 +1,7 @@
 import { useState } from "react";
-import Button from "../Button";
+import {TextField, Button} from '@material-ui/core';
+
+
 
 function Form(){
 
@@ -11,36 +13,29 @@ function Form(){
   return(
     <form >
     <div >
-      <label htmlFor="tarefa">
-        Adicione uma tarefa
-      </label>
-      <input
-        type="text"
-        name="tarefa"
-        id="tarefa"
+      <TextField 
+        id="tarefa" 
+        label="Adicione uma tarefa" 
         value={task}
         onChange={event => setTask(event.target.value)}
         placeholder="O que você quer fazer?"
         required
-      />
+        variant="outlined" />
+      
     </div>
     <div >
-      <label htmlFor="tempo">
-        Tempo
-      </label>
-      <input
+      
+      <TextField
+        id="tempo"
+        label="Quanto tempo vai levar?"
         type="time"
-        step="1"
-        name="tempo"
         value={time}
         onChange={event => setTime(event.target.value)}
-        id="tempo"
-        min="00:00:00"
-        max="01:30:00"
         required
       />
+      
     </div>
-    <Button value="Adicionar" type="submit" hasNotify={false} ></Button>
+    <Button variant="contained" type="submit" >Adicionar &nbsp;<i className="material-icons">send</i></Button>
   </form>
   );
 }
